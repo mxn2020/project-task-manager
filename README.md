@@ -1,52 +1,94 @@
 # Project & Task Manager
 
-## Pages & Features
+Organize projects, tasks, and team collaboration.
 
-### 1. Dashboard
-- Active projects overview with progress bars
-- My tasks due today / this week
-- Team workload summary
-- Recent activity feed
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Projects
-- Project list with status, deadline, and owner filters
-- Create / edit / archive projects
-- Project detail page: description, milestones, team members
-- Project timeline (Gantt chart view)
-- File attachments per project
+## Tech Stack
 
-### 3. Tasks
-- Kanban board view (To Do → In Progress → Review → Done)
-- List view with sorting (priority, due date, assignee)
-- Task detail: description, subtasks, comments, attachments
-- Assign tasks to team members
-- Labels, priorities, and due dates
-- Time tracking per task
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Calendar
-- Calendar view of tasks & milestones
-- Drag-and-drop rescheduling
-- Filter by project, assignee, or label
+## Getting Started
 
-### 5. Team
-- Team member directory
-- Invite members via email
-- Role management (admin, member, viewer)
-- Workload view (tasks per person)
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Reports
-- Project completion rate over time
-- Task distribution by status, priority, member
-- Time spent reports
-- Burndown charts
+## License
 
-### 7. Notifications
-- In-app notification center
-- Email notification preferences
-- @mention support in comments
+MIT © Mehdi Nabhani
 
-### 8. Settings
-- Workspace preferences
-- Project templates
-- Custom labels & statuses
-- Integration settings (calendar, email)
+---
+
+<details>
+<summary>📋 Original Feature Spec</summary>
+
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
